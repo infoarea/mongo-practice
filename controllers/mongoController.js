@@ -1,22 +1,4 @@
 
-// const userCollection = require('../models/User');
-
-// const mongoTest = async () => {
-
-//    try {
-
-//     const data = await userCollection.findById('638237914526867d62b9cc2a').select('-name')
-
-//        console.log(data);
-    
-//    } catch (error) {
-//         console.log(`${error.message}`.bgBlue.black);
-//    }
-// }
-
-// //Exports
-// module.exports = mongoTest;
-
 
 // {
 //    name : "Saiful islam",
@@ -52,18 +34,18 @@
 // }
 
 const Users = require('../models/User');
+const Foods = require('../models/Food');
+const Movies = require('../models/Movie');
 
 const UsersCollection = async () => {
-
-
 
     try {
 
 
-      const data = await Users.findByIdAndUpdate('63844da7510f8144dbc7f86a', {$unset : { skill : true } } )
-  
-
-         console.log(data);
+      const data = await Users.findById('63844da7510f8144dbc7f86b')
+      
+            console.log( await data.save() );
+ 
       
       
     } catch (error) {
