@@ -89,9 +89,8 @@ userSchema.virtual('welcome').get( function() {
 userSchema.pre('save', function( next ) {
     this.isPassed = false
         next();
-   
-       
-   
+    
+        
 });
 
 module.exports = mongoose.model('User', userSchema )
